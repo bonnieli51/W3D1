@@ -50,14 +50,13 @@ class Array
     end
 
     def my_flatten 
-        #return  if 
         result = []
         self.each do |ele| # ele = array or num or string
-            debugger
+            # debugger
             if ele.is_a?(Array)
                 ele.my_flatten 
             else
-                result << ele
+                return ele
             end
         end
         result
