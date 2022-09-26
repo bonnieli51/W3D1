@@ -52,15 +52,15 @@ class Array
     def my_flatten 
         result = []
         self.each do |ele| # ele = array or num or string
-            # debugger
             if ele.is_a?(Array)
-                ele.my_flatten 
+                result += ele.my_flatten 
             else
-                return ele
+                result << ele
             end
         end
         result
     end
+
 end
 
 p [1, 2, 3, [4, [5, 6]], [[[7]], 8]].my_flatten
